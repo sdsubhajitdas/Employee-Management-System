@@ -1,0 +1,125 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card p-3 mt-4 mb-5">
+            <form method="POST" action="" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <legend class="border-bottom mb-4">Add New Employee Details</legend>
+
+                <div class="form-group">
+                    {{form.emp_id.label()}}
+                    {% if form.emp_id.errors %}
+                    {{form.emp_id(class="form-control is-invalid", placeholder = "Employee Id")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.emp_id.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{form.emp_id(class="form-control", placeholder = "Employee Id")}}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{form.name.label()}}
+                    {% if form.name.errors %}
+                    {{form.name(class="form-control is-invalid", placeholder = "Name")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.name.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{form.name(class="form-control", placeholder = "Name")}}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{form.address.label()}}
+                    {% if form.address.errors %}
+                    {{form.address(class="form-control is-invalid", placeholder = "Address")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.address.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{form.address(class="form-control", placeholder = "Address")}}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{form.phone.label()}}
+                    {% if form.phone.errors %}
+                    {{form.phone(class="form-control is-invalid", placeholder = "Contact Number")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.phone.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{form.phone(class="form-control", placeholder = "Contact Number")}}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{form.email.label()}}
+                    {% if form.email.errors %}
+                    {{form.email(class="form-control is-invalid", placeholder = "Email")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.email.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{form.email(class="form-control", placeholder = "Email")}}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{form.salary.label()}}
+                    {% if form.salary.errors %}
+                    {{form.salary(class="form-control is-invalid", placeholder = "Salary")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.salary.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{form.salary(class="form-control", placeholder = "Salary")}}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{form.designation.label()}}
+                    {% if form.designation.errors %}
+                    {{form.designation(class="form-control is-invalid", placeholder = "Designation")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.designation.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{form.designation(class="form-control", placeholder = "Designation")}}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.dp.label}}
+                    <br> {{ form.dp(class = "btn btn-link") }}
+                </div>
+
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-primary ") }}
+                </div>
+            </form>
+            <div class="row">
+                <form action="/">
+                    <button class="btn btn-danger ml-3" href="{{ url_for('home') }}">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
