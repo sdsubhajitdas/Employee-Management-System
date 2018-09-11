@@ -1,5 +1,4 @@
 import os
-os.system("clear")
 from ems import app, database_name, db
 
 if __name__ == "__main__":
